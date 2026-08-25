@@ -313,13 +313,13 @@ npm run preview
 
 The website is being developed in stages.
 
-### Stage 1 — Structure
+### Stage 1 — Structure (Completed)
 
-* React/Vite setup
-* Page routing
-* Reusable components
-* Data structures
-* Basic page content
+* React/Vite setup      [X]
+* Page routing          [X]   
+* Reusable components   [X]
+* Data structures       [X]
+* Basic page content    [X]
 
 ### Stage 2 — Content
 
