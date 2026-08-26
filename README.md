@@ -323,8 +323,8 @@ The website is being developed in stages.
 
 ### Stage 2 — Content
 
-* Finalise project selection
-* Add project screenshots
+* Finalise project selection  [X]
+* Add project screenshots     [X]
 * Add skill logos
 * Write experience content
 * Write About page
