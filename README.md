@@ -321,7 +321,7 @@ The website is being developed in stages.
 * Data structures       [X]
 * Basic page content    [X]
 
-### Stage 2 — Content
+### Stage 2 — Content (completed)
 
 * Finalise project selection  [X]
 * Add project screenshots     [X]
@@ -333,10 +333,10 @@ The website is being developed in stages.
 
 ### Stage 3 — Design
 
-* Overall visual identity
-* Typography
-* Colours
-* Navigation
+* Overall visual identity   [X]
+* Typography                [X]
+* Colours                   [X]
+* Navigation                [x]
 * Project cards
 * Skill cards
 * Page layouts

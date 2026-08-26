@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 function Navbar() {
   return (
-    <nav>
+    <nav className='navbar'>
           <a
         href="https://www.instagram.com/kearmododragon/"
         target="_blank"
@@ -14,6 +13,13 @@ function Navbar() {
       <Link to="/">Home</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/about">About</Link>
+      <a
+  href="https://github.com/kearmododragon"
+  target="_blank"
+  rel="noreferrer"
+>
+  <FaGithub />
+</a>
       <Link to="/experience">Experience</Link>
       <Link to="/skills">Skills</Link>
       <Link to="/contact">Contact</Link>
