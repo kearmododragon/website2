@@ -328,8 +328,8 @@ The website is being developed in stages.
 * Add skill logos             [X]
 * Write experience content    [X]
 * Write About page            [X]
-* Add social links
-* Finalise contact details
+* Add social links            [X]
+* Finalise contact details    [X]
 
 ### Stage 3 — Design
 

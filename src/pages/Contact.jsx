@@ -7,7 +7,10 @@ function Contact() {
         Want to get in touch? Send me a message using the form below.
       </p>
 
-      <form>
+      <form
+        action="https://formsubmit.co/ckearney1992@gmail.com"
+        method="POST"
+      >
         <div>
           <label htmlFor="name">Name</label>
           <input
@@ -42,26 +45,6 @@ function Contact() {
           Send Message
         </button>
       </form>
-
-      <section>
-        <h2>Socials</h2>
-
-        <a
-          href="YOUR_LINKEDIN_URL"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LinkedIn
-        </a>
-
-        <a
-          href="YOUR_INSTAGRAM_URL"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Instagram
-        </a>
-      </section>
     </div>
   );
 }
