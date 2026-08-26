@@ -326,7 +326,7 @@ The website is being developed in stages.
 * Finalise project selection  [X]
 * Add project screenshots     [X]
 * Add skill logos             [X]
-* Write experience content
+* Write experience content    [X]
 * Write About page
 * Add social links
 * Finalise contact details
