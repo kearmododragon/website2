@@ -5,8 +5,6 @@ function ProjectCard({ project }) {
 
       <p>{project.description}</p>
 
-      <p>{project.technologies.join(' · ')}</p>
-
       <a href={project.liveUrl} target="_blank" rel="noreferrer">
         Live Site
       </a>
