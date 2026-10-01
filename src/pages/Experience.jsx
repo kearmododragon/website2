@@ -1,13 +1,12 @@
 function Experience() {
   return (
-    <div>
-      <h1 className="page-title">Experience</h1>
+    <>
+    <h1 className="page-title">Experience</h1>
+    <div className="experience-page">
 
       <section>
-        <h2>Current Job</h2>
-
-        <h3>Bar Staff</h3>
-        <h4>Runner66 — Barcelona | 2026–Present</h4>
+        <h2>Bar Staff</h2>
+        <h3>Runner66 — Barcelona | 2026–Present</h3>
 
         <p>
           Deliver friendly, personalised service to a diverse international
@@ -22,12 +21,10 @@ function Experience() {
       </section>
 
       <section>
-        <h2>Software & Technical Experience</h2>
-
-        <h3>Product Developer and Tester</h3>
-        <h4>
+        <h2>Product Developer and Tester</h2>
+        <h3>
           Mercedes-Benz Customer Assistance Center — Maastricht | 2024–2026
-        </h4>
+        </h3>
 
         <p>
           Worked with live systems to identify issues and potential problems
@@ -44,12 +41,10 @@ function Experience() {
       </section>
 
       <section>
-        <h2>Previous Experience</h2>
-
-        <h3>Dealer Parts Support Logistics Specialist</h3>
-        <h4>
+        <h2>Dealer Parts Support Logistics Specialist</h2>
+        <h3>
           Mercedes-Benz Customer Assistance Center — Maastricht | 2021–2024
-        </h4>
+        </h3>
 
         <p>
           Coordinated high-priority requests between dealerships and internal
@@ -62,11 +57,13 @@ function Experience() {
           <li>Identified and implemented process improvements.</li>
           <li>Worked across teams to resolve complex operational issues.</li>
         </ul>
+      </section>
 
-        <h3>Senior Customer Service Representative</h3>
-        <h4>
+      <section>
+        <h2>Senior Customer Service Representative</h2>
+        <h3>
           Mercedes-Benz Customer Assistance Center — Maastricht | 2017–2021
-        </h4>
+        </h3>
 
         <p>
           Managed complex customer cases across UK and European markets,
@@ -82,18 +79,18 @@ function Experience() {
       </section>
 
       <section>
-        <h2>Other Experience</h2>
-
-        <h3>Bar Manager</h3>
-        <h4>The Navigation Pub — Newark | 2014–2017</h4>
+        <h2>Bar Manager</h2>
+        <h3>The Navigation Pub — Newark | 2014–2017</h3>
 
         <ul>
           <li>Led a front-of-house team during busy periods.</li>
           <li>Maintained high customer service standards.</li>
           <li>Resolved customer concerns and coordinated staff.</li>
         </ul>
+      </section>
 
-        <h3>Other Relevant Experience</h3>
+      <section>
+        <h2>Other Relevant Experience</h2>
 
         <ul>
           <li>Hostel worker and tour guide — Brazil</li>
@@ -111,7 +108,8 @@ function Experience() {
         <p>ESERP Business School, Barcelona | 2011–2015</p>
       </section>
     </div>
+</>
+
   );
 }
-
 export default Experience;

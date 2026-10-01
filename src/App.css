@@ -370,3 +370,144 @@
   background-color: var(--primary);
   color: var(--background);
 }
+
+.home-content {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.home-content h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin: 0;
+}
+
+.home-content h3 {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  line-height: 1.4;
+  max-width: 1000px;
+  margin: 0;
+}
+.experience-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.experience-page p,
+.experience-page li {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+.contact-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.contact-page > p {
+  margin-bottom: 2rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-page form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-page label {
+  color: var(--primary);
+  font-family: var(--title-font);
+  font-size: 1.2rem;
+}
+
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background-color: var(--active);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.contact-page textarea {
+  resize: vertical;
+}
+
+.contact-page button {
+  align-self: center;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--text);
+  font-family: var(--title-font);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.contact-page button:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+.contact-page > p {
+  margin-bottom: 2rem;
+  color: var(--text);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.contact-status {
+  padding: 2rem;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  background-color: var(--active);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.contact-page .contact-status {
+  padding: 2rem;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  background-color: var(--active);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-page .contact-status.sending {
+  animation: sendingPulse 2s ease-in-out infinite;
+}
+
+@keyframes sendingPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
