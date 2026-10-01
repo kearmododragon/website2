@@ -1,7 +1,7 @@
 function SkillCard({ skill }) {
   return (
     <article>
-      {skill.icon && <skill.icon />}
+      {skill.icon && <skill.icon className="skill-icon" />}
 
       <h2>{skill.name}</h2>
 
