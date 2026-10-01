@@ -337,7 +337,7 @@ The website is being developed in stages.
 * Typography                [X]
 * Colours                   [X]
 * Navigation                [x]
-* Project cards
+* Project cards             [X]
 * Skill cards
 * Page layouts
 * Responsive design

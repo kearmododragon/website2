@@ -1,7 +1,7 @@
 function Experience() {
   return (
     <div>
-      <h1>Experience</h1>
+      <h1 className="page-title">Experience</h1>
 
       <section>
         <h2>Current Job</h2>

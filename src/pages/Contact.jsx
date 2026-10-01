@@ -1,7 +1,7 @@
 function Contact() {
   return (
     <div>
-      <h1>Contact</h1>
+      <h1 className="page-title">Contact</h1>
 
       <p>
         Want to get in touch? Send me a message using the form below.

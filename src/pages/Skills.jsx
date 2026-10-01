@@ -4,7 +4,7 @@ import skills from "../data/skills";
 function Skills() {
   return (
     <div>
-      <h1>Skills</h1>
+      <h1 className="page-title">Skills</h1>
 
       {skills.map((skill) => (
         <SkillCard key={skill.name} skill={skill} />

@@ -5,13 +5,26 @@ function ProjectCard({ project }) {
 
       <p>{project.description}</p>
 
-      <a href={project.liveUrl} target="_blank" rel="noreferrer">
-        Live Site
-      </a>
+      <img
+        src={project.image}
+        alt={`${project.title} screenshot`}
+      />
 
-      <a href={project.githubUrl} target="_blank" rel="noreferrer">
-        GitHub
-      </a>
+      <ul>
+        {project.technologies.map((technology) => (
+          <li key={technology}>{technology}</li>
+        ))}
+      </ul>
+
+      <div className="project-buttons">
+        <a href={project.liveUrl} target="_blank" rel="noreferrer">
+          Live Site
+        </a>
+
+        <a href={project.githubUrl} target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+      </div>
     </article>
   );
 }
