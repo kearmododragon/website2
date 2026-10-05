@@ -1,175 +1,628 @@
+import { useRef, useState } from "react";
+
+import mapImage from "../assets/about/map.avif";
+import sportsImage from "../assets/about/sports.webp";
+import meImage from "../assets/about/me.jpeg";
+import gamingImage from "../assets/about/gaming.avif";
+import lifeImage from "../assets/about/life.jpg";
+import usa1Image from "../assets/about/n.america-usa/usa1.jpg";
+
 function About() {
+  const [selectedSection, setSelectedSection] = useState(null);
+  const [selectedContinent, setSelectedContinent] = useState(null);
+  const [selectedSportSection, setSelectedSportSection] = useState(null);
+  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+
+  const imageRefs = useRef({});
+
+  const handleImageClick = (section) => {
+    const image = imageRefs.current[section];
+
+    if (!image) return;
+
+    const rect = image.getBoundingClientRect();
+
+    const imageCenterX = rect.left + rect.width / 2;
+    const imageCenterY = rect.top + rect.height / 2;
+
+    const screenCenterX = window.innerWidth / 2;
+    const screenCenterY = window.innerHeight / 2;
+
+    setImagePosition({
+      x: screenCenterX - imageCenterX,
+      y: screenCenterY - imageCenterY,
+    });
+
+    setSelectedSection(section);
+  };
+
+  const handleContinentClick = (event, continent) => {
+    event.stopPropagation();
+    setSelectedContinent(continent);
+  };
+
   return (
     <div>
       <h1 className="page-title">About Me</h1>
 
-      <section>
-        <h2>Who I Am</h2>
+      <div className="about-images">
 
-        <p>
-          Hello. I'm Ciaran, a 33-year-old from Newark, a town just outside
-          Nottingham in the UK. I'm currently living in Barcelona with my
-          girlfriend, Kamile, and after moving around quite a bit, I've reached
-          the point where I don't really consider anywhere else "home". For now,
-          Barcelona is it.
-        </p>
+        {/* =================================================
+            TRAVEL
+            ================================================= */}
 
-        <p>
-          I studied Software Engineering in 2023 and, after a few years of
-          working alongside it, I'm now working towards making software
-          development my career. I'm currently rebuilding and expanding the
-          projects I made during my studies, teaching myself along the way and
-          trying to become the developer I wanted to be when I first started
-          the course.
-        </p>
+        <div
+          ref={(element) => {
+            imageRefs.current.travel = element;
+          }}
+          className={`about-image ${selectedSection === "travel" ? "selected" : ""
+            }`}
+          style={
+            selectedSection === "travel"
+              ? {
+                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+              }
+              : undefined
+          }
+          onClick={() => handleImageClick("travel")}
+        >
+          <div className="travel-map">
+            <img src={mapImage} alt="World map" />
 
-        <p>
-          This page isn't my CV though. The rest of the website can tell you
-          about my work and what I can build. This is just here to tell you a
-          little more about the person behind it.
-        </p>
-      </section>
+            {selectedSection === "travel" && (
+              <svg
+                className="travel-map-overlay"
+                viewBox="0 0 1202 580"
+                preserveAspectRatio="none"
+              >
+                {/* North America */}
+                <rect
+                  x="39"
+                  y="36"
+                  width="406"
+                  height="191"
+                  className="continent north-america"
+                  onClick={(event) =>
+                    handleContinentClick(event, "North America")
+                  }
+                />
 
-      <section>
-        <h2>Interests</h2>
+                {/* South America */}
+                <rect
+                  x="312"
+                  y="239"
+                  width="189"
+                  height="233"
+                  className="continent south-america"
+                  onClick={(event) =>
+                    handleContinentClick(event, "South America")
+                  }
+                />
 
-        <h3>Travel</h3>
+                {/* Africa */}
+                <polygon
+                  points="529,158 547,286 611,313 634,391 773,381 812,320 797,242 734,217 702,173"
+                  className="continent africa"
+                  onClick={(event) =>
+                    handleContinentClick(event, "Africa")
+                  }
+                />
 
-        <p>
-          Travelling is probably my biggest interest. I've visited 53 countries
-          so far and collect currencies along the way, with 29 different
-          banknotes currently living in my wallet. My next big trip is Japan,
-          where I'll be attending a friend's wedding and celebrating my
-          birthday while I'm there in October.
-        </p>
+                {/* Europe */}
+                <polygon
+                  points="1177,26 732,13 559,29 493,72 543,155 666,160 751,160"
+                  className="continent europe"
+                  onClick={(event) =>
+                    handleContinentClick(event, "Europe")
+                  }
+                />
 
-        <p>
-          I enjoy the travelling itself just as much as the destinations.
-          Planning ridiculous itineraries, finding local food, getting lost in
-          places I've never been and coming home with something weird for my
-          currency collection are all part of the fun.
-        </p>
+                {/* Asia */}
+                <polygon
+                  points="719,163 822,285 974,328 1132,292 1192,68"
+                  className="continent asia"
+                  onClick={(event) =>
+                    handleContinentClick(event, "Asia")
+                  }
+                />
 
-        <h3>Sport</h3>
+                {/* Oceania */}
+                <polygon
+                  points="947,345 1098,468 1194,458 1191,354 1094,307 944,349"
+                  className="continent oceania"
+                  onClick={(event) =>
+                    handleContinentClick(event, "Oceania")
+                  }
+                />
+              </svg>
+            )}
+          </div>
 
-        <p>
-          I love playing sport, although I've officially retired from
-          "proper" football. These days I'll settle for five-a-side when my
-          knees allow it, and spend the rest of my time obsessing over watching
-          sport of almost any quality.
-        </p>
+          <h2>Travel</h2>
+        </div>
 
-        <p>
-          I'm currently a season ticket holder at RCD Espanyol, having
-          previously had season tickets at MVV Maastricht and Manchester
-          United. American football is another big one; I've watched games in
-          Cincinnati, New York, London and Madrid.
-        </p>
+        {/* =================================================
+            SPORTS
+            ================================================= */}
 
-        <p>
-          Then there's ice hockey, basketball and pretty much anything else
-          that happens to be happening. I follow the Liège Bulldogs, Kölner
-          Haie and Toronto Maple Leafs in hockey, while Žalgiris Kaunas is my
-          basketball team. I've also managed to get to Madison Square Garden,
-          two Paralympic Games in Brazil and France, and even a water polo
-          match in Paris.
-        </p>
+        <div
+          ref={(element) => {
+            imageRefs.current.sports = element;
+          }}
+          className={`about-image ${selectedSection === "sports" ? "selected" : ""
+            }`}
+          style={
+            selectedSection === "sports"
+              ? {
+                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+              }
+              : undefined
+          }
+          onClick={() => handleImageClick("sports")}
+        >
+          <div className="travel-map">
+            <img src={sportsImage} alt="Sports" />
 
-        <p>
-          I keep track of the stadiums and arenas I've visited too. I'm
-          currently at 42, which is a number I fully intend to make
-          unnecessarily large.
-        </p>
+            {selectedSection === "sports" && (
+              <svg
+                className="travel-map-overlay"
+                viewBox="0 0 3300 3300"
+                preserveAspectRatio="none"
+              >
+                {/* =================================================
+                    PLAYING
+                    ================================================= */}
 
-        <h3>Video Games</h3>
+                <rect
+                  x="227"
+                  y="265"
+                  width="1403"
+                  height="2668"
+                  className="continent sports-playing"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setSelectedSportSection("Playing");
+                  }}
+                />
 
-        <p>
-          I've been playing games for as long as I can remember, and these days
-          I get almost as much enjoyment from collecting old consoles as I do
-          actually playing them. From the N64 through to the PS5, I've got
-          enough hardware around that there's rarely an excuse not to have
-          something ready to play.
-        </p>
+                <rect
+                  x="550"
+                  y="1400"
+                  width="760"
+                  height="400"
+                  fill="var(--background)"
+                  opacity="0.9"
+                  pointerEvents="none"
+                />
 
-        <p>
-          Guitar Hero is another particular weakness. I have two guitars and a
-          drum kit, but despite owning enough equipment to start a band, I've
-          somehow never managed to actually form one.
-        </p>
-      </section>
+                <text
+                  x="930"
+                  y="1600"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className="sports-hotspot-label"
+                  pointerEvents="none"
+                >
+                  PLAYING
+                </text>
 
-      <section>
-        <h2>My Story</h2>
+                {/* =================================================
+                    WATCHING
+                    ================================================= */}
 
-        <p>
-          I'm originally from Newark, just outside Nottingham. My family
-          background stretches across the UK, with family from places including
-          Watford, Waterford, Swansea and Middlesbrough.
-        </p>
+                <rect
+                  x="1740"
+                  y="266"
+                  width="1403"
+                  height="2668"
+                  className="continent sports-watching"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setSelectedSportSection("Watching");
+                  }}
+                />
 
-        <p>
-          I've now lived in four different countries, which is probably why I
-          don't feel like I have a particular "home" base anymore. I tend to
-          think of wherever I'm currently living as home, and right now that's
-          Barcelona.
-        </p>
+                <rect
+                  x="2060"
+                  y="1400"
+                  width="760"
+                  height="400"
+                  fill="var(--background)"
+                  opacity="0.9"
+                  pointerEvents="none"
+                />
 
-        <p>
-          I first lived in Barcelona while studying here in 2014. I broke my
-          leg during that time, which was a fairly effective way of complicating
-          the experience, but despite that I've always said that Barcelona is
-          the best city in the world to live in.
-        </p>
+                <text
+                  x="2440"
+                  y="1600"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className="sports-hotspot-label"
+                  pointerEvents="none"
+                >
+                  WATCHING
+                </text>
+              </svg>
+            )}
+          </div>
 
-        <p>
-          Moving back here in 2026 was therefore an easy decision. I'm looking
-          forward to properly settling in, improving my Spanish, learning more
-          about Catalan and Spanish culture, and hopefully becoming part of the
-          city rather than just someone who happens to live here.
-        </p>
-      </section>
+          <h2>Sports</h2>
+        </div>
 
-      <section>
-        <h2>How I Try to Live</h2>
+        {/* =================================================
+            ME
+            ================================================= */}
 
-        <h3>"Leave everything as you found it, or better."</h3>
+        <div
+          ref={(element) => {
+            imageRefs.current.me = element;
+          }}
+          className={`about-image about-image-center ${selectedSection === "me" ? "selected" : ""
+            }`}
+          style={
+            selectedSection === "me"
+              ? {
+                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+              }
+              : undefined
+          }
+          onClick={() => handleImageClick("me")}
+        >
+          <img src={meImage} alt="Ciaran" />
+          <h2>Me</h2>
+        </div>
 
-        <p>
-          This is probably the closest thing I have to a personal rule. It
-          applies to the obvious things like the environment, but also to
-          friendships, workplaces, borrowed possessions and pretty much
-          anything else you interact with.
-        </p>
+        {/* =================================================
+            GAMING
+            ================================================= */}
 
-        <p>
-          If you have a negative impact on the things and people around you,
-          you should try to fix it. If you damage something, repair it. If you
-          make a mistake, make amends. Ideally, whatever you leave behind
-          should be no worse than when you found it.
-        </p>
+        <div
+          ref={(element) => {
+            imageRefs.current.gaming = element;
+          }}
+          className={`about-image ${selectedSection === "gaming" ? "selected" : ""
+            }`}
+          style={
+            selectedSection === "gaming"
+              ? {
+                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+              }
+              : undefined
+          }
+          onClick={() => handleImageClick("gaming")}
+        >
+          <img src={gamingImage} alt="Video games" />
+          <h2>Gaming</h2>
+        </div>
 
-        <h3>"Why the fuck not me?"</h3>
+        {/* =================================================
+            LIFE
+            ================================================= */}
 
-        <p>
-          This one came from actor Ed Skrein during a podcast with Scroobius
-          Pip, and for whatever reason it stuck with me.
-        </p>
+        <div
+          ref={(element) => {
+            imageRefs.current.life = element;
+          }}
+          className={`about-image ${selectedSection === "life" ? "selected" : ""
+            }`}
+          style={
+            selectedSection === "life"
+              ? {
+                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+              }
+              : undefined
+          }
+          onClick={() => handleImageClick("life")}
+        >
+          <img src={lifeImage} alt="My life" />
+          <h2>Life</h2>
+        </div>
+      </div>
 
-        <p>
-          I always wanted to play football for Manchester United. Why not me?
-          Well, eventually the answers become fairly obvious: lack of talent,
-          a dodgy knee, getting older and several other fairly significant
-          obstacles.
-        </p>
+      {(selectedContinent || selectedSportSection) && (
+        <div className="travel-window">
 
-        <p>
-          But the question is still useful. When I apply for a job, why not me?
-          When I want to try something new, why not me? I'm not going to be the
-          best at everything I attempt, but if I have the skills, the
-          confidence and the opportunity, there's no particular reason not to
-          give it a go.
-        </p>
-      </section>
+          <div className="travel-window-titlebar">
+            <span>{selectedContinent || selectedSportSection}</span>
+
+            <div className="travel-window-buttons">
+              <button disabled>_</button>
+
+              <button disabled>□</button>
+
+              <button
+                onClick={() => {
+                  setSelectedContinent(null);
+                  setSelectedSportSection(null);
+                }}
+              >
+                ×
+              </button>
+            </div>
+          </div>
+
+          <div className="travel-window-content">
+
+            {/* =================================================
+                NORTH AMERICA
+                ================================================= */}
+
+            {selectedContinent === "North America" && (
+              <>
+                <h2>North America</h2>
+
+                <h3>United States</h3>
+                <p>PLACEHOLDER TEXT FOR "United States"</p>
+
+                <h3>Canada</h3>
+                <p>PLACEHOLDER TEXT FOR "Canada"</p>
+              </>
+            )}
+
+            {/* =================================================
+                SOUTH AMERICA
+                ================================================= */}
+
+            {selectedContinent === "South America" && (
+              <>
+                <h2>South America</h2>
+
+                <h3>Brazil</h3>
+                <p>PLACEHOLDER TEXT FOR "Brazil"</p>
+              </>
+            )}
+
+            {/* =================================================
+                EUROPE
+                ================================================= */}
+
+            {selectedContinent === "Europe" && (
+              <>
+                <h2>Europe</h2>
+
+                <h3>England</h3>
+                <p>PLACEHOLDER TEXT FOR "England"</p>
+
+                <h3>Ireland</h3>
+                <p>PLACEHOLDER TEXT FOR "Ireland"</p>
+
+                <h3>Cyprus</h3>
+                <p>PLACEHOLDER TEXT FOR "Cyprus"</p>
+
+                <h3>Bulgaria</h3>
+                <p>PLACEHOLDER TEXT FOR "Bulgaria"</p>
+
+                <h3>Portugal</h3>
+                <p>PLACEHOLDER TEXT FOR "Portugal"</p>
+
+                <h3>France</h3>
+                <p>PLACEHOLDER TEXT FOR "France"</p>
+
+                <h3>Scotland</h3>
+                <p>PLACEHOLDER TEXT FOR "Scotland"</p>
+
+                <h3>Greece</h3>
+                <p>PLACEHOLDER TEXT FOR "Greece"</p>
+
+                <h3>Wales</h3>
+                <p>PLACEHOLDER TEXT FOR "Wales"</p>
+
+                <h3>Spain</h3>
+                <p>PLACEHOLDER TEXT FOR "Spain"</p>
+
+                <h3>Germany</h3>
+                <p>PLACEHOLDER TEXT FOR "Germany"</p>
+
+                <h3>Belgium</h3>
+                <p>PLACEHOLDER TEXT FOR "Belgium"</p>
+
+                <h3>Netherlands</h3>
+                <p>PLACEHOLDER TEXT FOR "Netherlands"</p>
+
+                <h3>Poland</h3>
+                <p>PLACEHOLDER TEXT FOR "Poland"</p>
+
+                <h3>Luxembourg</h3>
+                <p>PLACEHOLDER TEXT FOR "Luxembourg"</p>
+
+                <h3>Italy</h3>
+                <p>PLACEHOLDER TEXT FOR "Italy"</p>
+
+                <h3>Vatican City</h3>
+                <p>PLACEHOLDER TEXT FOR "Vatican City"</p>
+
+                <h3>Denmark</h3>
+                <p>PLACEHOLDER TEXT FOR "Denmark"</p>
+
+                <h3>Sweden</h3>
+                <p>PLACEHOLDER TEXT FOR "Sweden"</p>
+
+                <h3>Norway</h3>
+                <p>PLACEHOLDER TEXT FOR "Norway"</p>
+
+                <h3>Lithuania</h3>
+                <p>PLACEHOLDER TEXT FOR "Lithuania"</p>
+
+                <h3>Ukraine</h3>
+                <p>PLACEHOLDER TEXT FOR "Ukraine"</p>
+
+                <h3>Czech Republic</h3>
+                <p>PLACEHOLDER TEXT FOR "Czech Republic"</p>
+
+                <h3>Bosnia and Herzegovina</h3>
+                <p>PLACEHOLDER TEXT FOR "Bosnia and Herzegovina"</p>
+
+                <h3>Serbia</h3>
+                <p>PLACEHOLDER TEXT FOR "Serbia"</p>
+
+                <h3>Montenegro</h3>
+                <p>PLACEHOLDER TEXT FOR "Montenegro"</p>
+
+                <h3>North Macedonia</h3>
+                <p>PLACEHOLDER TEXT FOR "North Macedonia"</p>
+
+                <h3>Albania</h3>
+                <p>PLACEHOLDER TEXT FOR "Albania"</p>
+
+                <h3>Kosovo</h3>
+                <p>PLACEHOLDER TEXT FOR "Kosovo"</p>
+
+                <h3>Austria</h3>
+                <p>PLACEHOLDER TEXT FOR "Austria"</p>
+
+                <h3>Slovakia</h3>
+                <p>PLACEHOLDER TEXT FOR "Slovakia"</p>
+
+                <h3>Malta</h3>
+                <p>PLACEHOLDER TEXT FOR "Malta"</p>
+
+                <h3>Northern Ireland</h3>
+                <p>PLACEHOLDER TEXT FOR "Northern Ireland"</p>
+
+                <h3>Andorra</h3>
+                <p>PLACEHOLDER TEXT FOR "Andorra"</p>
+
+                <h3>Latvia</h3>
+                <p>PLACEHOLDER TEXT FOR "Latvia"</p>
+
+                <h3>Finland</h3>
+                <p>PLACEHOLDER TEXT FOR "Finland"</p>
+
+                <h3>Estonia</h3>
+                <p>PLACEHOLDER TEXT FOR "Estonia"</p>
+
+                <h3>Croatia</h3>
+                <p>PLACEHOLDER TEXT FOR "Croatia"</p>
+
+                <h3>Slovenia</h3>
+                <p>PLACEHOLDER TEXT FOR "Slovenia"</p>
+
+                <h3>Hungary</h3>
+                <p>PLACEHOLDER TEXT FOR "Hungary"</p>
+
+                <h3>Switzerland</h3>
+                <p>PLACEHOLDER TEXT FOR "Switzerland"</p>
+
+                <h3>Romania</h3>
+                <p>PLACEHOLDER TEXT FOR "Romania"</p>
+
+                <h3>Iceland</h3>
+                <p>PLACEHOLDER TEXT FOR "Iceland"</p>
+              </>
+            )}
+
+            {/* =================================================
+                AFRICA
+                ================================================= */}
+
+            {selectedContinent === "Africa" && (
+              <>
+                <h2>Africa</h2>
+
+                <h3>Morocco</h3>
+                <p>PLACEHOLDER TEXT FOR "Morocco"</p>
+              </>
+            )}
+
+            {/* =================================================
+                ASIA
+                ================================================= */}
+
+            {selectedContinent === "Asia" && (
+              <>
+                <h2>Asia</h2>
+
+                <h3>Taiwan</h3>
+                <p>PLACEHOLDER TEXT FOR "Taiwan"</p>
+
+                <h3>Indonesia</h3>
+                <p>PLACEHOLDER TEXT FOR "Indonesia"</p>
+
+                <h3>Kazakhstan</h3>
+                <p>PLACEHOLDER TEXT FOR "Kazakhstan"</p>
+
+                <h3>Uzbekistan</h3>
+                <p>PLACEHOLDER TEXT FOR "Uzbekistan"</p>
+
+                <h3>Kyrgyzstan</h3>
+                <p>PLACEHOLDER TEXT FOR "Kyrgyzstan"</p>
+
+                <h3>Tajikistan</h3>
+                <p>PLACEHOLDER TEXT FOR "Tajikistan"</p>
+
+                <h3>Japan</h3>
+                <p>PLACEHOLDER TEXT FOR "Japan"</p>
+              </>
+            )}
+
+            {/* =================================================
+                OCEANIA
+                ================================================= */}
+
+            {selectedContinent === "Oceania" && (
+              <>
+                <h2>Oceania</h2>
+
+                <p>PLACEHOLDER TEXT FOR "Oceania"</p>
+              </>
+            )}
+
+            {/* =================================================
+                PLAYING
+                ================================================= */}
+
+            {selectedSportSection === "Playing" && (
+              <>
+                <h2>Playing</h2>
+
+                <h3>Football</h3>
+                <p>PLACEHOLDER TEXT FOR "Football"</p>
+
+                <h3>Ice hockey</h3>
+                <p>PLACEHOLDER TEXT FOR "Ice hockey"</p>
+
+                <h3>Table tennis</h3>
+                <p>PLACEHOLDER TEXT FOR "Table tennis"</p>
+
+                <h3>Tennis</h3>
+                <p>PLACEHOLDER TEXT FOR "Tennis"</p>
+
+                <h3>Running</h3>
+                <p>PLACEHOLDER TEXT FOR "Running"</p>
+              </>
+            )}
+
+            {/* =================================================
+                WATCHING
+                ================================================= */}
+
+            {selectedSportSection === "Watching" && (
+              <>
+                <h2>Watching</h2>
+
+                <h3>Football</h3>
+                <p>PLACEHOLDER TEXT FOR "Football"</p>
+
+                <h3>American football</h3>
+                <p>PLACEHOLDER TEXT FOR "American football"</p>
+
+                <h3>Basketball</h3>
+                <p>PLACEHOLDER TEXT FOR "Basketball"</p>
+
+                <h3>Ice hockey</h3>
+                <p>PLACEHOLDER TEXT FOR "Ice hockey"</p>
+
+                <h3>Other</h3>
+                <p>PLACEHOLDER TEXT FOR "Other"</p>
+              </>
+            )}
+          </div>
+
+          <div className="travel-window-statusbar">
+            Ready
+          </div>
+        </div>
+      )}
     </div>
   );
 }

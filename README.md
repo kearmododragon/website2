@@ -331,7 +331,7 @@ The website is being developed in stages.
 * Add social links            [X]
 * Finalise contact details    [X]
 
-### Stage 3 — Design
+### Stage 3 — Design  (In progress)
 
 * Overall visual identity   [X]
 * Typography                [X]
@@ -339,18 +339,18 @@ The website is being developed in stages.
 * Navigation                [x]
 * Project cards             [X]
 * Skill cards               [X]
-* Page layouts
+* Page layouts              [X]
 * Responsive design
 * Mobile optimisation
 
-### Stage 4 — Functionality
+### Stage 4 — Functionality (In progress)
 
-* Contact form
+* Contact form                          [X]
 * Interactive elements
 * Galleries/slideshows
 * Additional About/blog functionality
 
-### Stage 5 — Deployment
+### Stage 5 — Deployment (not started)
 
 * Production testing
 * Link testing
