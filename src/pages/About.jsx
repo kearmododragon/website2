@@ -9,36 +9,49 @@ import usa1Image from "../assets/about/n.america-usa/usa1.jpg";
 
 function About() {
   const [selectedSection, setSelectedSection] = useState(null);
-  const [selectedContinent, setSelectedContinent] = useState(null);
-  const [selectedSportSection, setSelectedSportSection] = useState(null);
-  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+  const [selectedSubSection, setSelectedSubSection] = useState(null);
+  const [selectedImagePosition, setSelectedImagePosition] = useState({
+    x: 0,
+    y: 0,
+  });
 
   const imageRefs = useRef({});
 
-  const handleImageClick = (section) => {
-    const image = imageRefs.current[section];
-
-    if (!image) return;
-
-    const rect = image.getBoundingClientRect();
-
-    const imageCenterX = rect.left + rect.width / 2;
-    const imageCenterY = rect.top + rect.height / 2;
-
-    const screenCenterX = window.innerWidth / 2;
-    const screenCenterY = window.innerHeight / 2;
-
-    setImagePosition({
-      x: screenCenterX - imageCenterX,
-      y: screenCenterY - imageCenterY,
+const handleImageClick = (section) => {
+  if (selectedSection === section) {
+    setSelectedSection(null);
+    setSelectedSubSection(null);
+    setSelectedImagePosition({
+      x: 0,
+      y: 0,
     });
+    return;
+  }
 
-    setSelectedSection(section);
-  };
+  const image = imageRefs.current[section];
 
-  const handleContinentClick = (event, continent) => {
+  if (!image) return;
+
+  const rect = image.getBoundingClientRect();
+
+  const imageCenterX = rect.left + rect.width / 2;
+  const imageCenterY = rect.top + rect.height / 2;
+
+  const screenCenterX = window.innerWidth / 2;
+  const screenCenterY = window.innerHeight / 2;
+
+  setSelectedImagePosition({
+    x: screenCenterX - imageCenterX,
+    y: screenCenterY - imageCenterY,
+  });
+
+  setSelectedSubSection(null);
+  setSelectedSection(section);
+};
+
+  const handleSubSectionClick = (event, subSection) => {
     event.stopPropagation();
-    setSelectedContinent(continent);
+    setSelectedSubSection(subSection);
   };
 
   return (
@@ -60,18 +73,18 @@ function About() {
           style={
             selectedSection === "travel"
               ? {
-                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+                transform: `translate(${selectedImagePosition.x}px, ${selectedImagePosition.y}px) scale(1.35)`,
               }
               : undefined
           }
           onClick={() => handleImageClick("travel")}
         >
-          <div className="travel-map">
+          <div className="about-interactive-image">
             <img src={mapImage} alt="World map" />
 
             {selectedSection === "travel" && (
               <svg
-                className="travel-map-overlay"
+                className="about-interactive-overlay"
                 viewBox="0 0 1202 580"
                 preserveAspectRatio="none"
               >
@@ -81,9 +94,9 @@ function About() {
                   y="36"
                   width="406"
                   height="191"
-                  className="continent north-america"
+                  className="about-hotspot north-america"
                   onClick={(event) =>
-                    handleContinentClick(event, "North America")
+                    handleSubSectionClick(event, "North America")
                   }
                 />
 
@@ -93,45 +106,45 @@ function About() {
                   y="239"
                   width="189"
                   height="233"
-                  className="continent south-america"
+                  className="about-hotspot south-america"
                   onClick={(event) =>
-                    handleContinentClick(event, "South America")
+                    handleSubSectionClick(event, "South America")
                   }
                 />
 
                 {/* Africa */}
                 <polygon
                   points="529,158 547,286 611,313 634,391 773,381 812,320 797,242 734,217 702,173"
-                  className="continent africa"
+                  className="about-hotspot africa"
                   onClick={(event) =>
-                    handleContinentClick(event, "Africa")
+                    handleSubSectionClick(event, "Africa")
                   }
                 />
 
                 {/* Europe */}
                 <polygon
                   points="1177,26 732,13 559,29 493,72 543,155 666,160 751,160"
-                  className="continent europe"
+                  className="about-hotspot europe"
                   onClick={(event) =>
-                    handleContinentClick(event, "Europe")
+                    handleSubSectionClick(event, "Europe")
                   }
                 />
 
                 {/* Asia */}
                 <polygon
                   points="719,163 822,285 974,328 1132,292 1192,68"
-                  className="continent asia"
+                  className="about-hotspot asia"
                   onClick={(event) =>
-                    handleContinentClick(event, "Asia")
+                    handleSubSectionClick(event, "Asia")
                   }
                 />
 
                 {/* Oceania */}
                 <polygon
                   points="947,345 1098,468 1194,458 1191,354 1094,307 944,349"
-                  className="continent oceania"
+                  className="about-hotspot oceania"
                   onClick={(event) =>
-                    handleContinentClick(event, "Oceania")
+                    handleSubSectionClick(event, "Oceania")
                   }
                 />
               </svg>
@@ -154,18 +167,18 @@ function About() {
           style={
             selectedSection === "sports"
               ? {
-                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+                transform: `translate(${selectedImagePosition.x}px, ${selectedImagePosition.y}px) scale(1.35)`,
               }
               : undefined
           }
           onClick={() => handleImageClick("sports")}
         >
-          <div className="travel-map">
+          <div className="about-interactive-image">
             <img src={sportsImage} alt="Sports" />
 
             {selectedSection === "sports" && (
               <svg
-                className="travel-map-overlay"
+                className="about-interactive-overlay"
                 viewBox="0 0 3300 3300"
                 preserveAspectRatio="none"
               >
@@ -178,11 +191,10 @@ function About() {
                   y="265"
                   width="1403"
                   height="2668"
-                  className="continent sports-playing"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    setSelectedSportSection("Playing");
-                  }}
+                  className="about-hotspot sports-playing"
+                  onClick={(event) =>
+                    handleSubSectionClick(event, "Playing")
+                  }
                 />
 
                 <rect
@@ -200,7 +212,7 @@ function About() {
                   y="1600"
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  className="sports-hotspot-label"
+                  className="about-hotspot-label"
                   pointerEvents="none"
                 >
                   PLAYING
@@ -215,11 +227,10 @@ function About() {
                   y="266"
                   width="1403"
                   height="2668"
-                  className="continent sports-watching"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    setSelectedSportSection("Watching");
-                  }}
+                  className="about-hotspot sports-watching"
+                  onClick={(event) =>
+                    handleSubSectionClick(event, "watching")
+                  }
                 />
 
                 <rect
@@ -237,7 +248,7 @@ function About() {
                   y="1600"
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  className="sports-hotspot-label"
+                  className="about-hotspot-label"
                   pointerEvents="none"
                 >
                   WATCHING
@@ -262,7 +273,7 @@ function About() {
           style={
             selectedSection === "me"
               ? {
-                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+                transform: `translate(${selectedImagePosition.x}px, ${selectedImagePosition.y}px) scale(1.35)`,
               }
               : undefined
           }
@@ -285,7 +296,7 @@ function About() {
           style={
             selectedSection === "gaming"
               ? {
-                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+                transform: `translate(${selectedImagePosition.x}px, ${selectedImagePosition.y}px) scale(1.35)`,
               }
               : undefined
           }
@@ -308,7 +319,7 @@ function About() {
           style={
             selectedSection === "life"
               ? {
-                transform: `translate(${imagePosition.x}px, ${imagePosition.y}px) scale(1.35)`,
+                transform: `translate(${selectedImagePosition.x}px, ${selectedImagePosition.y}px) scale(1.35)`,
               }
               : undefined
           }
@@ -319,21 +330,20 @@ function About() {
         </div>
       </div>
 
-      {(selectedContinent || selectedSportSection) && (
-        <div className="travel-window">
+      {selectedSubSection && (
+        <div className="about-window">
 
-          <div className="travel-window-titlebar">
-            <span>{selectedContinent || selectedSportSection}</span>
+          <div className="about-window-titlebar">
+            <span>{selectedSubSection} </span>
 
-            <div className="travel-window-buttons">
+            <div className="about-window-buttons">
               <button disabled>_</button>
 
               <button disabled>□</button>
 
               <button
                 onClick={() => {
-                  setSelectedContinent(null);
-                  setSelectedSportSection(null);
+                  setSelectedSubSection(null);
                 }}
               >
                 ×
@@ -341,13 +351,13 @@ function About() {
             </div>
           </div>
 
-          <div className="travel-window-content">
+          <div className="about-window-content">
 
             {/* =================================================
                 NORTH AMERICA
                 ================================================= */}
 
-            {selectedContinent === "North America" && (
+            {selectedSection === "travel" && selectedSubSection === "North America" && (
               <>
                 <h2>North America</h2>
 
@@ -363,7 +373,7 @@ function About() {
                 SOUTH AMERICA
                 ================================================= */}
 
-            {selectedContinent === "South America" && (
+            {selectedSection === "travel" && selectedSubSection === "South America" && (
               <>
                 <h2>South America</h2>
 
@@ -376,7 +386,7 @@ function About() {
                 EUROPE
                 ================================================= */}
 
-            {selectedContinent === "Europe" && (
+            {selectedSection === "travel" && selectedSubSection === "Europe" && (
               <>
                 <h2>Europe</h2>
 
@@ -515,7 +525,7 @@ function About() {
                 AFRICA
                 ================================================= */}
 
-            {selectedContinent === "Africa" && (
+            {selectedSection === "travel" && selectedSubSection === "Africa" && (
               <>
                 <h2>Africa</h2>
 
@@ -528,7 +538,7 @@ function About() {
                 ASIA
                 ================================================= */}
 
-            {selectedContinent === "Asia" && (
+            {selectedSection === "travel" && selectedSubSection === "Asia" && (
               <>
                 <h2>Asia</h2>
 
@@ -559,7 +569,7 @@ function About() {
                 OCEANIA
                 ================================================= */}
 
-            {selectedContinent === "Oceania" && (
+            {selectedSection === "travel" && selectedSubSection === "Oceania" && (
               <>
                 <h2>Oceania</h2>
 
@@ -571,7 +581,7 @@ function About() {
                 PLAYING
                 ================================================= */}
 
-            {selectedSportSection === "Playing" && (
+            {selectedSection === "sports" && selectedSubSection === "Playing" && (
               <>
                 <h2>Playing</h2>
 
@@ -596,7 +606,7 @@ function About() {
                 WATCHING
                 ================================================= */}
 
-            {selectedSportSection === "Watching" && (
+            {selectedSection === "sports" && selectedSubSection === "Watching" && (
               <>
                 <h2>Watching</h2>
 
@@ -618,7 +628,7 @@ function About() {
             )}
           </div>
 
-          <div className="travel-window-statusbar">
+          <div className="about-window-statusbar">
             Ready
           </div>
         </div>
