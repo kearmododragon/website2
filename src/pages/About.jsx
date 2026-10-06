@@ -260,7 +260,7 @@ function About() {
           <h2>Sports</h2>
         </div>
 
-{/* =================================================
+        {/* =================================================
                     Me
                     ================================================= */}
 
@@ -279,15 +279,14 @@ function About() {
           }
           onClick={() => handleImageClick("me")}
         >
-          <div className="about-interactive-image">
+          <div className="about-interactive-image about-me-image">
             <img src={meImage} alt="Ciaran" />
 
             {selectedSection === "me" && (
               <svg
                 className="about-interactive-overlay"
                 viewBox="0 0 1204 1600"
-                preserveAspectRatio="xMidYMid meet"
-              >
+                preserveAspectRatio="xMidYMid slice"              >
                 <polygon
                   points="588,766 561,775 562,797 567,820 556,836 532,843 522,868 517,916 518,953 526,986 526,1010 523,1037 527,1085 526,1109 522,1149 522,1175 512,1203 526,1219 542,1218 551,1205 589,1049 607,1201 622,1213 653,1211 634,1088 650,1040 636,970 634,896 680,916 694,909 684,880 625,821 611,829 614,802 608,774"
                   className="about-hotspot"
@@ -650,13 +649,13 @@ function About() {
     MY STORY
     ================================================= */}
 
-{selectedSection === "me" && selectedSubSection === "My Story" && (
-  <>
-    <h2>My Story</h2>
+            {selectedSection === "me" && selectedSubSection === "My Story" && (
+              <>
+                <h2>My Story</h2>
 
-    <p>PLACEHOLDER TEXT FOR "My Story"</p>
-  </>
-)}
+                <p>PLACEHOLDER TEXT FOR "My Story"</p>
+              </>
+            )}
           </div>
 
           <div className="about-window-statusbar">

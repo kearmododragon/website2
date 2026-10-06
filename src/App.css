@@ -534,4 +534,13 @@ font-size: 140px;
 pointer-events: none;
 }
 
+.about-me-image .about-interactive-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-image-center img {
+  height: 350px;
+}
+
 /* ////////////// END ////////////// */
