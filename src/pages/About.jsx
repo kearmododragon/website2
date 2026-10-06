@@ -17,37 +17,37 @@ function About() {
 
   const imageRefs = useRef({});
 
-const handleImageClick = (section) => {
-  if (selectedSection === section) {
-    setSelectedSection(null);
-    setSelectedSubSection(null);
+  const handleImageClick = (section) => {
+    if (selectedSection === section) {
+      setSelectedSection(null);
+      setSelectedSubSection(null);
+      setSelectedImagePosition({
+        x: 0,
+        y: 0,
+      });
+      return;
+    }
+
+    const image = imageRefs.current[section];
+
+    if (!image) return;
+
+    const rect = image.getBoundingClientRect();
+
+    const imageCenterX = rect.left + rect.width / 2;
+    const imageCenterY = rect.top + rect.height / 2;
+
+    const screenCenterX = window.innerWidth / 2;
+    const screenCenterY = window.innerHeight / 2;
+
     setSelectedImagePosition({
-      x: 0,
-      y: 0,
+      x: screenCenterX - imageCenterX,
+      y: screenCenterY - imageCenterY,
     });
-    return;
-  }
 
-  const image = imageRefs.current[section];
-
-  if (!image) return;
-
-  const rect = image.getBoundingClientRect();
-
-  const imageCenterX = rect.left + rect.width / 2;
-  const imageCenterY = rect.top + rect.height / 2;
-
-  const screenCenterX = window.innerWidth / 2;
-  const screenCenterY = window.innerHeight / 2;
-
-  setSelectedImagePosition({
-    x: screenCenterX - imageCenterX,
-    y: screenCenterY - imageCenterY,
-  });
-
-  setSelectedSubSection(null);
-  setSelectedSection(section);
-};
+    setSelectedSubSection(null);
+    setSelectedSection(section);
+  };
 
   const handleSubSectionClick = (event, subSection) => {
     event.stopPropagation();
@@ -260,9 +260,9 @@ const handleImageClick = (section) => {
           <h2>Sports</h2>
         </div>
 
-        {/* =================================================
-            ME
-            ================================================= */}
+{/* =================================================
+                    Me
+                    ================================================= */}
 
         <div
           ref={(element) => {
@@ -279,7 +279,26 @@ const handleImageClick = (section) => {
           }
           onClick={() => handleImageClick("me")}
         >
-          <img src={meImage} alt="Ciaran" />
+          <div className="about-interactive-image">
+            <img src={meImage} alt="Ciaran" />
+
+            {selectedSection === "me" && (
+              <svg
+                className="about-interactive-overlay"
+                viewBox="0 0 1204 1600"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <polygon
+                  points="588,766 561,775 562,797 567,820 556,836 532,843 522,868 517,916 518,953 526,986 526,1010 523,1037 527,1085 526,1109 522,1149 522,1175 512,1203 526,1219 542,1218 551,1205 589,1049 607,1201 622,1213 653,1211 634,1088 650,1040 636,970 634,896 680,916 694,909 684,880 625,821 611,829 614,802 608,774"
+                  className="about-hotspot"
+                  onClick={(event) =>
+                    handleSubSectionClick(event, "My Story")
+                  }
+                />
+              </svg>
+            )}
+          </div>
+
           <h2>Me</h2>
         </div>
 
@@ -626,6 +645,18 @@ const handleImageClick = (section) => {
                 <p>PLACEHOLDER TEXT FOR "Other"</p>
               </>
             )}
+
+            {/* =================================================
+    MY STORY
+    ================================================= */}
+
+{selectedSection === "me" && selectedSubSection === "My Story" && (
+  <>
+    <h2>My Story</h2>
+
+    <p>PLACEHOLDER TEXT FOR "My Story"</p>
+  </>
+)}
           </div>
 
           <div className="about-window-statusbar">
