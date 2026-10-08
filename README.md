@@ -343,10 +343,11 @@ The website is being developed in stages.
 * Responsive design
 * Mobile optimisation
 
+
 ### Stage 4 — Functionality (In progress)
 
 * Contact form                          [X]
-* Interactive elements
+* Interactive elements/quiz
 * Galleries/slideshows
 * Additional About/blog functionality
 

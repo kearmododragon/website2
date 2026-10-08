@@ -434,7 +434,7 @@ function About() {
           onClick={() => handleImageClick("life")}
         >
           <img src={lifeImage} alt="My life" />
-          <h2>Life</h2>
+          <h2>Life Quiz</h2>
         </div>
       </div>
 
