@@ -274,7 +274,7 @@ function About() {
                   height="2668"
                   className="about-hotspot sports-watching"
                   onClick={(event) =>
-                    handleSubSectionClick(event, "watching")
+                    handleSubSectionClick(event, "Watching")
                   }
                 />
 
@@ -649,25 +649,28 @@ function About() {
                 <h2>Asia</h2>
 
                 <h3>Taiwan</h3>
-                <p>PLACEHOLDER TEXT FOR "Taiwan"</p>
+                <p>My first ever taste of Asia. I loved being in Taiwan. It felt like a mix between Japanese, Chinese and American culture, which, knowing a bit about their history, is apt. The food there was incredible, as were all the places we went. It was an amazing idea to extend our layover from 5 hours to 5 days and get to experience what we could of this place. Personal highlight was winning a black Pikachu from a claw machine, which my dogs now have!</p>
 
                 <h3>Indonesia</h3>
-                <p>PLACEHOLDER TEXT FOR "Indonesia"</p>
+                <p>Indonesia was the main target for the first trip, so once we'd finished our layover, that's where we went next. The funny thing about it is, even though we went to a place known for beaches, we spent hardly any time at any! My best day, and possibly the best day of my life, was here though. My favourite animal, the Komodo Dragon, is native to an island in Indonesia and I was blessed with a chance to go. On this day, we took a boat out, climbed a mountain, relaxed on a pink beach, went to Komodo Island and saw wild dragons, back to the boat and swimming with wild manta rays, off to a tiny little mini island in the sea (like 100m long), then off to another island for a drink and a walk where we saw a baby shark. Incredible day.</p>
 
                 <h3>Kazakhstan</h3>
-                <p>PLACEHOLDER TEXT FOR "Kazakhstan"</p>
+                <p>First stop of a 4-country trip to "The Stans". On the first day of arrival, we dropped our stuff off at a hotel and left Almaty for a couple of days, heading towards the mountains for an adventure, and stayed instead in a yurt. Almaty was great and we had some amazing food for the days we were there, but the main thing I wanted, the ice rink up a mountain, was sadly closed. We only saw Almaty in this HUGE country, so I'd definitely head back one day.</p>
 
                 <h3>Uzbekistan</h3>
-                <p>PLACEHOLDER TEXT FOR "Uzbekistan"</p>
+                <p>Next stop, Uzbekistan. it was really interesting. We went to Bukhara and Samarkhand. Stunning places and really clean. Amazing markets where the colours and the smells blew you away. Really enjoyed the slower, more chilled vibes out here and would recommend both places for sure.</p>
 
                 <h3>Kyrgyzstan</h3>
-                <p>PLACEHOLDER TEXT FOR "Kyrgyzstan"</p>
+                <p>My favourite stop of this trip. The capital, Bishkek, was a very pretty place with the tallest (at the time) flagpole in the world. I love their flag, so this was cool. Then we rented a car and drove around Issyk-Kul. Found some petroglyphs that were thousands of years old, raced some horses in our cars and eventually got to our destination, Karakol. Here, the main thing was to climb a mountain. After a bus, a long climb and hitching a lift, we were eventually at the bottom of the ski resort. Which was closed. We still climbed it and thankfully met some Swedes halfway up who supplied us with beer and snowboard lessons. The trip down was almost as rough as the trip up. After all this, we headed back with a stop in Bokenbayevo to see how they hunt with golden eagles. Their golden eagle crashed into my knee in the test, but he was okay.</p>
+
+
 
                 <h3>Tajikistan</h3>
-                <p>PLACEHOLDER TEXT FOR "Tajikistan"</p>
+                <p>Final stop on the trip. We started with a stop in the border town of Panjakent. Not much there and almost impossible to get veggie food. Even when we asked for no animals, no meat, etc., we were offered chicken. We took a day trip to the 7 Lakes with a German man and that was a lot of fun. Far from main society and through the mountains that were mined for gold. The lakes were perfect and loved every minute of the tour. Then we got a driver to take us to the capital, [DUSHANBE?]. The drive was stunning as over 90% of the country is mountains! The capital was so beautiful too. A hard push for electric vehicles meant that the air was clean and the city was busy but quiet. We "splashed out" on a hotel that was more than reasonable, but up on the top floor of a huge building. Beautiful end to an amazing trip.</p>
 
                 <h3>Japan</h3>
-                <p>PLACEHOLDER TEXT FOR "Japan"</p>
+                <p>One of my best friends, Carl, lives out in Japan and I will be going there to see him get married to his fiancée in October 2026. I'll update this when I'm back.</p>
+
               </>
             )}
 
@@ -688,19 +691,35 @@ function About() {
                 <h2>Playing</h2>
 
                 <h3>Football</h3>
-                <p>PLACEHOLDER TEXT FOR "Football"</p>
+                <p>Ever since I could walk, I've played football. Football has always been in my life, from kicking a ball with my dad in the garden to playing 5-a-side in Barcelona. I've played for 3 official teams: Newark Town FC, VV Scharn and RKHSV Heer. Newark Town is where I spent over 10 years playing, and at one point I played with future England international Patrick Bamford. I've played in almost every position, but mainly GK, CB, RB and CM. I like to be as far from the other team's goal as possible at all times.</p>
+
+                <p>For Newark Town, I'd say the highlights were coming second in the league at Under-11s (Farndon won the league every year, but we pushed them close), playing in two international tournaments in France, and playing a game to commemorate the end of the First World War in Flanders Fields. I'm still looking for the video footage from ITV News, but I found some photos. It was an unforgettable experience.</p>
+
+                <p>For Scharn, we won the league and I was playing with a mix of locals and work friends. I quit to have an operation on my knee and controversially transferred to their arch-rivals Heer. With Heer, we started in the league I had won a few years earlier and went through and won it again! I had so much fun playing with this team. It already had some friends on it, but this is by far the most fun I've ever had playing football in my life.</p>
+
+                <p>I'm currently an unsigned free agent, however, I don't think Man Utd are looking at me anytime soon.</p>
 
                 <h3>Ice hockey</h3>
-                <p>PLACEHOLDER TEXT FOR "Ice hockey"</p>
+                <p>Okay, so I've never actually <strong>PLAYED</strong> ice hockey, but it's my missed love. I always wanted to, but it is an expensive sport to start. I missed the opportunity when in Nottingham to pick it up, and in the Netherlands it never felt feasible, whereas now in Barcelona it's just not possible. I occasionally take ice skating lessons or just free skate and rollerblade to try and get my ability up in case the chance ever shows itself! One day...</p>
+
+                <h3>Field hockey</h3>
+                <p>I did, however, play field hockey! For a year at uni, my friend Owain asked me to play for his team. I'd never played hockey before, so I was happy to help out in goal, as their second team needed anyone they could get.</p>
+
+                <p>It was so much painful fun! The social side was great, of course. I managed to play once for the first team while also winning the league with the seconds. I only stopped because I spent a year working at uni; otherwise, I might still be playing now.</p>
 
                 <h3>Table tennis</h3>
-                <p>PLACEHOLDER TEXT FOR "Table tennis"</p>
+                <p>When I was younger, my best friend Oliver's grandad ran a table tennis club at my school, and I went every week. I really enjoyed it, and it's a great game to be decent at. Now in Barcelona, there are table tennis tables all over the city, so it's fun to go and play in the evening while it's still warm.</p>
+
+                <p>The best game was round the table, where you'd take your shot and run to the other side of the table and join the queue until it was your shot. You miss and you're out. Last person standing wins.</p>
 
                 <h3>Tennis</h3>
-                <p>PLACEHOLDER TEXT FOR "Tennis"</p>
+                <p>In 2015, my friend JJ and I took up tennis. I went from having unlimited serves until I could get it in, to getting the occasional ace and winning more than I lost! I loved playing with JJ, and I hope when I'm fully set up over here I'm able to get back into playing. With my girlfriend or friends. Or both!</p>
 
                 <h3>Running</h3>
-                <p>PLACEHOLDER TEXT FOR "Running"</p>
+                <p>I used to run with my friend Ryan while he did his paper round before school. I love running, but I sometimes take a lot of motivating to actually get out there. I ran a marathon in Tallinn a few years back, and I'll do another in Barcelona in 2027. Hoping to better my time there.</p>
+
+                <p>My favourite thing about running is just going. Maastricht was great for this, as there were a lot of routes where you wouldn't get interrupted by foot traffic or crossing roads, whereas here in Barcelona I've not found my favourite routes yet. Although running around the Nou Camp hasn't worn off just yet.</p>
+
               </>
             )}
 
@@ -711,19 +730,44 @@ function About() {
                 <h2>Watching</h2>
 
                 <h3>Football</h3>
-                <p>PLACEHOLDER TEXT FOR "Football"</p>
+                <p>Just like playing, I've watched football for my entire life. Some of my earliest memories include watching England vs Argentina in the '98 World Cup. My dad was actually able to take me out of school to watch it with him in the pub, pint in hand. Come to think of it, I'm not sure why he wasn't at work either!</p>
+
+                <p>I've been blessed to have had season tickets at three clubs in three countries: Manchester United, MVV Maastricht and RCD Espanyol.</p>
+
+                <p>At Manchester United, I've been honoured to witness some amazing moments. Countless matches, including winning the title against Spurs in '99, beating Barcelona on the way to winning the Champions League in '08, beating the noisy neighbours 4–3 with a 96th-minute winner, and seeing Nani's "seal dribble" against Arsenal as we beat them 4–0.</p>
+
+                <p>As is the case with football, though, I've also seen some terrible games, like the cheats beating us 6–1 on my birthday, no less.</p>
+
+                <p>Part of the reason I travel is to watch football around the world, and I've seen football live in, I think, 12 countries. Please don't ask me how many of those matches ended in draws, though...</p>
 
                 <h3>American football</h3>
-                <p>PLACEHOLDER TEXT FOR "American football"</p>
+                <p>I LOVE watching American football. I feel it's a sport that's better on TV than live, but I'm addicted to watching sports being played in real life.</p>
+
+                <p>My team are the Bengals, and I've seen them in London against the Rams, in Cincinnati against the Falcons, and in New York against the Giants. I'll also be going to Madrid in November to watch them play the Falcons (again).</p>
+
+                <p>I've also watched some German American football, but sadly, the Cologne Centurions are now defunct.</p>
 
                 <h3>Basketball</h3>
-                <p>PLACEHOLDER TEXT FOR "Basketball"</p>
+                <p>I've never been a huge fan of basketball, but it's fun to watch occasionally. My first taste of live basketball was at uni, where my housemate Clayton was a member of the team. Through him, we managed to make friends with the whole team, which made going to games, home and away, a lot of fun.</p>
+
+                <p>It was the biggest event for us at varsity, and even though we lost the whole event, it was so good to win the basketball!</p>
+
+                <p>I also went to see the Knicks in New York, where they won in overtime, so at least I got my money's worth!</p>
+
+                <p>The best basketball atmosphere I've experienced, though, was in Kaunas watching Žalgiris. Being in an arena with the whole crowd bouncing... there's nothing like it!</p>
 
                 <h3>Ice hockey</h3>
-                <p>PLACEHOLDER TEXT FOR "Ice hockey"</p>
+                <p>I've seen ice hockey played in four countries so far: Canada, England, Belgium and Germany.</p>
+
+                <p>In Germany, they have the best atmosphere; in Canada, they have the best quality; in England, they have the best overall experience. But Belgium was something else.</p>
+
+                <p>I have no clue how many games I went to with the Bulldogs, but one day stands out above all others. The team was in the final game of the playoffs and came back from 4–1 down to win 5–4 in overtime.</p>
+
+                <p>One of the players, Darques, recognised me from a video I'd made days before and said it had been passed around the team. After the game, I was able to go onto the ice with all the fans who were left and get photos with the players and the cup.</p>
 
                 <h3>Other</h3>
-                <p>PLACEHOLDER TEXT FOR "Other"</p>
+                <p>I can't list every sport I've ever seen. I've been to the Olympics to watch water polo and the Paralympics for blind football. I've also seen cycling, rowing, hurling, boxing, athletics... literally any sport where people are competing, I'll be there watching.</p>
+
               </>
             )}
 
@@ -731,9 +775,28 @@ function About() {
 
             {selectedSection === "me" && selectedSubSection === "My Story" && (
               <>
-                <h2>My Story</h2>
+                <h2>0-10</h2>
 
-                <p>PLACEHOLDER TEXT FOR "My Story"</p>
+                <p>As a child, I was a proper mummy's boy. I would always be by her side. I was a typical kid who loved getting dirty in the mud, climbing trees and playing sports. For some reason, my family thought I might end up a priest, but I think that's just because I went to a Catholic school and was a good boy. I would play football every second I could during the day, before going to sleep, waking up and doing it all over again. My best friends were all my schoolmates, even though I hated school. The classic: my favourite subjects were lunchtime and home time.</p>
+
+                <h2>10-20</h2>
+
+                <p>These years hit me like a tonne of bricks and were definitely the defining years of my life. My father passed away when I was 11. I went to secondary school, where I discovered I could coast through school and still do well enough. I got decent enough grades and had my first crush (Lettie Batty. Hope she's okay!). I moved away from the school as soon as I could because 1) it was in Mansfield, 2) I had a reputation thanks to my mouth and my older sister, and 3) it was in Mansfield.</p>
+
+                <p>I went to college in Nottingham, where I learnt to step outside my comfort zone and made a tonne of new friends. I discovered a love of live music after seeing Kanye West when I was 16, and then seeing anyone and everyone I could once I started earning money. I got my first, second, third and fourth jobs, from doing a paper round to refereeing. I had my first trip abroad without family, spending a week in Portugal, and then went to uni. These were the years that moulded my life.</p>
+
+                <h2>20-30</h2>
+
+                <p>This is where I discovered who I really was. I finished uni with a knee that had been repaired, only for it to need repairing again a few years later (two ACL/MCL surgeries, and it's okay for now). I got my first real office job in tourism management, dealing with business travel. I moved out of the country for the first time and went on my first BIG trip to Brazil. I broke up with a girlfriend or two and met my current girlfriend, who took up most of the decade, and many more years beyond it.</p>
+
+                <p>This was also the decade I started getting tattoos! It certainly isn't the decade I stopped. I have them up both arms and one each on my legs. It started with a Kanye West bear tattoo, even though I don't listen to his music anymore. </p>
+
+                <p>I travelled to more countries than I can count and developed into the human I am today, with the help of the people around me. I also suffered the loss of more family members, including my mother, during the world-altering event of the COVID-19 pandemic. It was a dramatic decade for me.</p>
+
+
+                <h2>30-40</h2>
+
+                <p>Almost four years into this decade of my life, I've already ticked off things I could only have dreamed of a decade ago. I'm happily living in Barcelona, trying to change my career into something I've wanted to do for a long, long time. I've got nothing but excitement ahead of me, and I look forward to what this decade has in store for me.</p>
               </>
             )}
 
@@ -742,27 +805,41 @@ function About() {
             {selectedSection === "gaming" && selectedSubSection === "Retro" && (
               <>
                 <h2>Retro</h2>
-                <p>PLACEHOLDER TEXT FOR "NES"</p>
-                <p>PLACEHOLDER TEXT FOR "Game Boy Colour"</p>
-                <p>PLACEHOLDER TEXT FOR "N64"</p>
-                <p>PLACEHOLDER TEXT FOR "GameCube"</p>
-                <p>PLACEHOLDER TEXT FOR "PS1"</p>
-                <p>PLACEHOLDER TEXT FOR "PS2"</p>
-                <p>PLACEHOLDER TEXT FOR "PSP"</p>
-                <p>PLACEHOLDER TEXT FOR "Wii"</p>
-                <p>PLACEHOLDER TEXT FOR "Xbox 360"</p>
+
+                <p>The first console I ever owned was an NES. I only had two games at the time: "Goal", which was a terrible football game, and "Kirby's Adventure in Dream Land". I remember Kirby being impossible to complete at the time, especially beating Dedede at the end. I picked it back up as an adult, and it took me a little over an hour to reach 100%. Great games. I picked up Duck Hunt one day, but I swear my TV made me hit no matter what.</p>
+
+                <p>The peak of '90s kid gaming had to be the Game Boy. I had the Colour in purple and eventually an Advance SP with tribal markings. I was a cool kid. I'm sure I must have had more than two games, but I only ever remember playing Pokémon Red and Pokémon Crystal. Pokémon Crystal unofficially must have the most hours I've ever put into a game because I was obsessed with it. My favourite Pokémon is Bulbasaur, and even though he wasn't catchable for me in the game (nobody to trade with), I would complete the game and repeat it so often.</p>
+
+                <p>Now, the N64 was my entire childhood. I'm pretty sure I'm undefeated in Mario Kart 64 as Bowser. I cried when I rented Super Smash Bros. from Blockbuster because I didn't understand how to play it. I've bought, sold and broken this console more than any other, and I still have it. At uni, it was a staple of the house, with us playing Mario Kart, GoldenEye or Pokémon Stadium weekly, if not daily, over the three years I was in Stoke. I still have one now, and I adore this piece of kit.</p>
+
+                <p>I loved my GameCube, and it was the first time I ever got a console while it was still new. I remember going to Currys and getting one. But I needed a new TV, so I was spoilt for my birthday and Christmas that year. I played all kinds of games on this, but I loved Star Fox! I can still quote that game even now! I need to get this back out and throw on some 007: Rogue Agent.</p>
+
+                <p>I never actually owned a PS1, but my sister did, so in my eyes, it was as good as mine. Playing through Tomb Raider 1 and 2 but never completing them. Grabbing random off-brand games at petrol stations. Getting demos out of magazines. This is where my true love of gaming really developed.</p>
+
+                <p>Who didn't have a PS2, though? GTA: San Andreas. FIFA coming into its own. Getting your friends round to play WWE or Tony Hawk's. The EyeToy leading the way for VR tech now. Kids these days just don't understand.</p>
+
+                <p>I'd argue the PSP was the best piece of portable gaming hardware. Fully portable, expandable memory, and able to play movies and music videos. A huge game catalogue and, most importantly for some people like me, it was easy to jailbreak. Apparently. If no homework was due, the hour-long bus journey to and from secondary school would be spent playing GTA or Pro Evo with friends.</p>
+
+                <p>The Wii must be the most innovative and fun console. So much of what we take for granted now came from here. Wii Sports is the greatest free game ever released. I bought Red Steel simply because you could use the Nunchuk to hold your gun sideways. NFL was a lot of fun on this too, and you really felt active while playing. Even if you were lying down, covered in Doritos, wiggling the controller around.</p>
+
+                <p>The 360 took up so much of my young adulthood. Playing online with friends is probably why I only ended up at Staffordshire Uni. Xbox Live parties revolutionised online gaming, and I'd play until well into the early morning. Just. One. More. Game... A burning memory of this was renting a NASCAR game with my friend Ryan. AKA, turn-left simulator. We got an achievement for completing an entire 500-lap race. I'm still not sure why. I still have one now, along with all the Guitar Hero bits, which is a blast. I always wanted the Star Wars edition, though. The best special-edition console in my eyes. I don't even like Star Wars!</p>
               </>
             )}
 
             {selectedSection === "gaming" && selectedSubSection === "Modern" && (
               <>
                 <h2>Modern</h2>
-                <p>PLACEHOLDER TEXT FOR "PS4"</p>
-                <p>PLACEHOLDER TEXT FOR "PS5"</p>
-                <p>PLACEHOLDER TEXT FOR "Wii U"</p>
-                <p>PLACEHOLDER TEXT FOR "Switch"</p>
-                <p>PLACEHOLDER TEXT FOR "Mobile"</p>
-                <p>PLACEHOLDER TEXT FOR "PC"</p>
+                <p>The PS4 was such a good console for such a long time. It shocked me just how long it was around when they started talking about a new generation towards the end of its lifetime. I had the retro controller for it, which I adored, but had to sell it before going travelling. The Spider-Man games released for it are incredible, and I'll still play them. The PS4 VR headset was so much fun, too! Superhot in VR was amazing. Trying to resist moving to stop time. Genius.</p>
+
+                <p>The first console I've ever pre-ordered. I was so excited to be in a position where I could afford to, and I got in there early. Or so I thought. I waited until there was a confirmed price for the console, went and pre-ordered it, only to get it about six months later due to a backlog! My first game on it was Maneater, an RPG where you play as a shark. So much fun! It's a great piece of kit, but I find myself falling into the trap of having so many games I haven't completed, played or even downloaded, yet I stick the classic sports games on instead.</p>
+
+                <p>The Wii U was a weird one. On paper, it's basically the same as the Switch, right? There just wasn't the game catalogue or support for it, though, I guess. I'm also the only person I know who ever had one! It did help me through my overnight stay after surgery, though, and it was a lot of fun... for a short while. I didn't feel bad when I sold that one on.</p>
+
+                <p>I got the Switch as a Christmas present from my girlfriend, and I'm sure it's just because she wanted to play Animal Crossing! It's such a good console, though. So many good games, and yet I find myself going through the retro games on the consoles I already own, playing games I already own!</p>
+
+                <p>Mobile gaming is a strange one. I always play it down, but Pokémon GO changed the world in 2016. I kept playing it right through until I got a dog and didn't need an excuse to get outside! I also play Balatro on there, and one day I will break the score barrier. I can't imagine anyone out there *doesn't* play some kind of game on their phone now.</p>
+
+                <p>I built my PC specifically for gaming and, for some reason, only played older games for a long, long time. During COVID, I got back into Call of Duty and played Warzone with friends. I still play with those friends, but we've moved from Warzone to Helldivers, to Overcooked, back to Warzone, and now we're playing Wardogs. I also have the new James Bond game. My favourite games to stick on, though, are roguelike deck-builders, like Slay the Spire and Inscryption. My PC is much higher-spec than I deserve, but I won't need to upgrade it for a long, long time. My biggest time sink, though, is without doubt Football Manager. Adding up only the hours counted on Steam, let's just say I should be an expert by now. I'm far, far from an expert.</p>
               </>
             )}
           </div>
