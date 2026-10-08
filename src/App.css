@@ -498,8 +498,9 @@ font-family: Arial, sans-serif;
 }
 
 .about-window-content p {
-color: #000;
-font-family: Arial, sans-serif;
+  color: #000;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1rem;
 }
 
 .about-window-content img {
@@ -528,10 +529,14 @@ align-items: center;
 }
 
 .about-hotspot-label {
-fill: var(--primary);
-font-family: var(--title-font);
-font-size: 140px;
-pointer-events: none;
+  fill: var(--primary);
+  font-family: var(--title-font);
+  font-size: 120px;
+  pointer-events: none;
+}
+
+.about-travel-label {
+  font-size: 40px;
 }
 
 .about-me-image .about-interactive-image img {
@@ -541,6 +546,30 @@ pointer-events: none;
 }
 .about-image-center img {
   height: 350px;
+}
+
+/* ////////////// FOOTER ////////////// */
+
+.footer {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footer span:first-child {
+  text-align: left;
+}
+
+.footer span:nth-child(2) {
+  text-align: center;
+}
+
+.footer span:last-child {
+  text-align: right;
 }
 
 /* ////////////// END ////////////// */

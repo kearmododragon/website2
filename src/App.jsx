@@ -8,6 +8,7 @@ import Experience from './pages/Experience';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
