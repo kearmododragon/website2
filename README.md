@@ -353,9 +353,9 @@ The website is being developed in stages.
 
 ### Stage 5 — Deployment (not started)
 
-* Production testing
-* Link testing
-* Performance checks
+* Production testing                    [X]
+* Link testing                          [X]
+* Performance checks                    [X]
 * Deployment
 * Domain configuration
 * Final portfolio review
@@ -368,3 +368,4 @@ Icebox/post production.
 links to 2 projects per skill need filling out
 Add photos to the about page to break up the texts.
 potentially add a couple photos to the home page
+contact form says "Email" instead of message

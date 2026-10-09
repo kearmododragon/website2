@@ -75,7 +75,7 @@ function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message">Email</label>
+              <label htmlFor="message">Message</label>
               <textarea
                 id="message"
                 name="message"
