@@ -368,4 +368,4 @@ Icebox/post production.
 links to 2 projects per skill need filling out
 Add photos to the about page to break up the texts.
 potentially add a couple photos to the home page
-contact form says "Email" instead of message
+Footer needs mobile readyness

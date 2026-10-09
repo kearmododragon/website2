@@ -1,3 +1,4 @@
+
 import {
   SiJavascript,
   SiPython,
@@ -14,7 +15,7 @@ import {
   SiMongodb,
   SiGit,
   SiGithub,
-  SiFigma
+  SiFigma,
 } from "react-icons/si";
 
 const skills = [
@@ -23,240 +24,229 @@ const skills = [
     icon: SiJavascript,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Blackjack",
+        githubUrl: "https://github.com/kearmododragon/Project-1",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
+      },
+    ],
   },
-
   {
     name: "Python",
     icon: SiPython,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Holiday Comparison App",
+        githubUrl: "https://github.com/kearmododragon/final-project",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Finch Collector",
+        githubUrl: "https://github.com/kearmododragon/Finch-Collector",
+      },
+    ],
   },
-
   {
     name: "HTML",
     icon: SiHtml5,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Blackjack",
+        githubUrl: "https://github.com/kearmododragon/Project-1",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Old Portfolio",
+        githubUrl: "https://github.com/kearmododragon/Portfolio",
+      },
+    ],
   },
-
   {
     name: "CSS",
     icon: SiCss,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Blackjack",
+        githubUrl: "https://github.com/kearmododragon/Project-1",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
+      },
+    ],
   },
-
   {
     name: "React",
     icon: SiReact,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        // Private repository
+        name: "React Audubon Site Lab",
+        githubUrl: "https://github.com/kearmododragon/react-audubon-site-lab",
+      },
+    ],
   },
-
   {
     name: "Bootstrap",
     icon: SiBootstrap,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Holiday Comparison App",
+        githubUrl: "https://github.com/kearmododragon/final-project",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Competitive Holiday",
+        githubUrl: "https://github.com/kearmododragon/competitive-holiday",
+      },
+    ],
   },
-
   {
     name: "Tailwind",
     icon: SiTailwindcss,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        // Private repository
+        name: "Product Preview Card Component",
+        githubUrl:
+          "https://github.com/kearmododragon/product-preview-card-component",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
+      },
+    ],
   },
-
   {
     name: "Bulma",
     icon: SiBulma,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Finch Collector",
+        githubUrl: "https://github.com/kearmododragon/Finch-Collector",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Competitive Holiday",
+        githubUrl: "https://github.com/kearmododragon/competitive-holiday",
+      },
+    ],
   },
-
   {
     name: "Node.js",
     icon: SiNodedotjs,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "MERN Backend",
+        githubUrl: "https://github.com/kearmododragon/mern-backend",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Portfolio Backend",
+        githubUrl: "https://github.com/kearmododragon/Portfolio-backend",
+      },
+    ],
   },
-
   {
     name: "Express",
     icon: SiExpress,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "MERN Backend",
+        githubUrl: "https://github.com/kearmododragon/mern-backend",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "MEN Full Stack Homework",
+        githubUrl: "https://github.com/kearmododragon/MEN-Full-Stack-Homework",
+      },
+    ],
   },
-
   {
     name: "Django",
     icon: SiDjango,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Holiday Comparison App",
+        githubUrl: "https://github.com/kearmododragon/final-project",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Competitive Holiday",
+        githubUrl: "https://github.com/kearmododragon/competitive-holiday",
+      },
+    ],
   },
-
   {
     name: "PostgreSQL",
     icon: SiPostgresql,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Holiday Comparison App",
+        githubUrl: "https://github.com/kearmododragon/final-project",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Competitive Holiday",
+        githubUrl: "https://github.com/kearmododragon/competitive-holiday",
+      },
+    ],
   },
-
   {
     name: "MongoDB",
     icon: SiMongodb,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        // Private repository
+        name: "Mongoose Flights Lab",
+        githubUrl: "https://github.com/kearmododragon/Mongoose-Flights-Lab",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "MEN Full Stack Homework",
+        githubUrl: "https://github.com/kearmododragon/MEN-Full-Stack-Homework",
+      },
+    ],
   },
-
   {
     name: "Git",
     icon: SiGit,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Blackjack",
+        githubUrl: "https://github.com/kearmododragon/Project-1",
+      },
+    ],
   },
-
   {
     name: "GitHub",
     icon: SiGithub,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
+        name: "Old Portfolio",
+        githubUrl: "https://github.com/kearmododragon/Portfolio",
+      },
+    ],
   },
-
   {
     name: "Figma",
     icon: SiFigma,
     projects: [
       {
-        name: "Project One",
-        githubUrl: "YOUR GITHUB URL"
+        name: "Current Portfolio",
+        githubUrl: "https://github.com/kearmododragon/website2",
       },
       {
-        name: "Project Two",
-        githubUrl: "YOUR GITHUB URL"
-      }
-    ]
-  }
+        name: "Old Portfolio",
+        githubUrl: "https://github.com/kearmododragon/Portfolio",
+      },
+    ],
+  },
 ];
 
 export default skills;

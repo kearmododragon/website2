@@ -548,6 +548,7 @@ align-items: center;
   height: 350px;
 }
 
+
 /* ////////////// FOOTER ////////////// */
 
 .footer {
@@ -570,6 +571,33 @@ align-items: center;
 
 .footer span:last-child {
   text-align: right;
+}
+
+/* ////////////// RESPONSIVE FOOTER ////////////// */
+
+@media (max-width: 800px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .footer span:first-child {
+    display: none;
+  }
+
+  .footer span:nth-child(2) {
+    text-align: center;
+  }
 }
 
 /* ////////////// RESPONSIVE NAVIGATION ////////////// */
