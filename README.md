@@ -367,3 +367,7 @@ Icebox/post production.
 
 Add photos to the about page to break up the texts.
 potentially add a couple photos to the home page
+
+https://aws.amazon.com/free/?trk=52605843-2998-4d6e-a9f7-390cbf6d2c3d&sc_channel=ps&ef_id=CjwKCAjwoaLWBhAWEiwAnyitu0Rm7o8Te-uHYjIOv5TmoJsTfehPvTcVv0G408gA8wMEKUqq75AnLRoCf6QQAvD_BwE:G:s&gads_camp=23533256638&gads_ag=193057747335&gads_ad=795841353784&gads_kw=aws%20services&gads_matchtype=e&gads_network=g&gads_device=c&gads_geo=9217533&gad_campaignid=23533256638&gbraid=0AAAAADjHtp9adxsxgr3urKN-R6cUIUGDP&gclid=CjwKCAjwoaLWBhAWEiwAnyitu0Rm7o8Te-uHYjIOv5TmoJsTfehPvTcVv0G408gA8wMEKUqq75AnLRoCf6QQAvD_BwE
+
+refer to AWS (as per Owain)
