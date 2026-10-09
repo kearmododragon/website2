@@ -331,7 +331,7 @@ The website is being developed in stages.
 * Add social links            [X]
 * Finalise contact details    [X]
 
-### Stage 3 — Design  (In progress)
+### Stage 3 — Design  (Completed)
 
 * Overall visual identity   [X]
 * Typography                [X]
@@ -340,8 +340,8 @@ The website is being developed in stages.
 * Project cards             [X]
 * Skill cards               [X]
 * Page layouts              [X]
-* Responsive design
-* Mobile optimisation
+* Responsive design         [X]
+* Mobile optimisation       [X]
 
 
 ### Stage 4 — Functionality (In progress)
@@ -359,3 +359,12 @@ The website is being developed in stages.
 * Deployment
 * Domain configuration
 * Final portfolio review
+
+
+
+
+Icebox/post production. 
+
+links to 2 projects per skill need filling out
+Add photos to the about page to break up the texts.
+potentially add a couple photos to the home page
