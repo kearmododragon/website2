@@ -356,16 +356,14 @@ The website is being developed in stages.
 * Production testing                    [X]
 * Link testing                          [X]
 * Performance checks                    [X]
-* Deployment
-* Domain configuration
-* Final portfolio review
+* Deployment                            [X]
+* Domain configuration                  [X]
+* Final portfolio review                [X]
 
 
 
 
 Icebox/post production. 
 
-links to 2 projects per skill need filling out
 Add photos to the about page to break up the texts.
 potentially add a couple photos to the home page
-Footer needs mobile readyness
