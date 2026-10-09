@@ -347,9 +347,9 @@ The website is being developed in stages.
 ### Stage 4 — Functionality (In progress)
 
 * Contact form                          [X]
-* Interactive elements/quiz
+* Interactive elements/quiz             [X]
 * Galleries/slideshows
-* Additional About/blog functionality
+* Additional About/blog functionality   [X]
 
 ### Stage 5 — Deployment (not started)
 

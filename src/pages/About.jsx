@@ -1,5 +1,14 @@
 import { useRef, useState } from "react";
 
+import {
+  travelQuestions,
+  meQuestions,
+  sportsPlayingQuestions,
+  sportsWatchingQuestions,
+  gamingRetroQuestions,
+  gamingModernQuestions,
+} from "../data/quiz";
+
 import mapImage from "../assets/about/map.avif";
 import sportsImage from "../assets/about/sports.webp";
 import meImage from "../assets/about/me.jpeg";
@@ -14,9 +23,76 @@ function About() {
     x: 0,
     y: 0,
   });
-
+  const [quizOpen, setQuizOpen] = useState(false);
+  const [quizQuestions, setQuizQuestions] = useState([]);
+  const [quizAnswers, setQuizAnswers] = useState([]);
+  const [quizFinished, setQuizFinished] = useState(false);
   const imageRefs = useRef({});
+  const startQuiz = () => {
+    const pickRandom = (questions) =>
+      questions[Math.floor(Math.random() * questions.length)];
 
+    const travelQuestion = pickRandom(travelQuestions);
+    const meQuestion = pickRandom(meQuestions);
+
+    const sportsQuestion = pickRandom([
+      ...sportsPlayingQuestions,
+      ...sportsWatchingQuestions,
+    ]);
+
+    const gamingQuestion = pickRandom([
+      ...gamingRetroQuestions,
+      ...gamingModernQuestions,
+    ]);
+
+    const selectedQuestions = [
+      travelQuestion,
+      sportsQuestion,
+      meQuestion,
+      gamingQuestion,
+    ];
+
+    const selectedIds = new Set(
+      selectedQuestions.map(
+        (question) => `${question.category}-${question.id}`
+      )
+    );
+
+    const allQuestions = [
+      ...travelQuestions,
+      ...meQuestions,
+      ...sportsPlayingQuestions,
+      ...sportsWatchingQuestions,
+      ...gamingRetroQuestions,
+      ...gamingModernQuestions,
+    ];
+
+    const availableWildCards = allQuestions.filter(
+      (question) =>
+        !selectedIds.has(`${question.category}-${question.id}`)
+    );
+
+    const wildCardQuestion = pickRandom(availableWildCards);
+
+    setQuizQuestions([
+      ...selectedQuestions,
+      wildCardQuestion,
+    ]);
+
+    setQuizAnswers([]);
+    setQuizFinished(false);
+    setQuizOpen(true);
+  };
+  const handleQuizAnswer = (questionIndex, selectedAnswer) => {
+    setQuizAnswers((previousAnswers) => {
+      const updatedAnswers = [...previousAnswers];
+      updatedAnswers[questionIndex] = selectedAnswer;
+      return updatedAnswers;
+    });
+  };
+  const finishQuiz = () => {
+    setQuizFinished(true);
+  };
   const handleImageClick = (section) => {
     if (selectedSection === section) {
       setSelectedSection(null);
@@ -48,12 +124,10 @@ function About() {
     setSelectedSubSection(null);
     setSelectedSection(section);
   };
-
   const handleSubSectionClick = (event, subSection) => {
     event.stopPropagation();
     setSelectedSubSection(subSection);
   };
-
   return (
     <div>
       <h1 className="page-title">About Me</h1>
@@ -416,7 +490,7 @@ function About() {
           <h2>Gaming</h2>
         </div>
 
-        {/* LIFE */}
+        {/* LIFE QUIZ*/}
 
         <div
           ref={(element) => {
@@ -431,13 +505,144 @@ function About() {
               }
               : undefined
           }
-          onClick={() => handleImageClick("life")}
+          onClick={startQuiz}
         >
           <img src={lifeImage} alt="My life" />
           <h2>Life Quiz</h2>
         </div>
       </div>
 
+      {quizOpen && (
+        <div className="about-window">
+          <div className="about-window-titlebar">
+            <span>Life Quiz</span>
+
+            <div className="about-window-buttons">
+              <button
+                disabled
+                aria-label="Minimize"
+              >
+                _
+              </button>
+              <button
+                disabled
+                aria-label="Maximize"
+              >
+                □
+              </button>
+              <button
+                onClick={() => setQuizOpen(false)}
+                aria-label="Close quiz"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+
+          <div className="about-window-content">
+            {!quizFinished ? (
+              <>
+                <h2>How well do you know Ciaran?</h2>
+                <p>
+                  Answer all five questions to see your score.
+                </p>
+
+                {quizQuestions.map((question, questionIndex) => (
+                  <div key={`${question.category}-${question.id}`}>
+                    <h3>
+                      Question {questionIndex + 1} of {quizQuestions.length}
+                    </h3>
+
+                    <p>{question.question}</p>
+
+                    <div>
+                      {question.options.map((option) => (
+                        <button
+                          key={option}
+                          type="button"
+                          onClick={() =>
+                            handleQuizAnswer(questionIndex, option)
+                          }
+                          disabled={quizFinished}
+                          aria-pressed={quizAnswers[questionIndex] === option}
+                          style={{
+                            display: "block",
+                            width: "100%",
+                            marginBottom: "6px",
+                            textAlign: "left",
+                            backgroundColor:
+                              quizAnswers[questionIndex] === option
+                                ? "#000080"
+                                : "#c0c0c0",
+                            color:
+                              quizAnswers[questionIndex] === option
+                                ? "#fff"
+                                : "#000",
+                          }}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+                <button
+                  type="button"
+                  onClick={finishQuiz}
+                  disabled={quizAnswers.filter(
+                    (answer) => answer !== undefined
+                  ).length !== quizQuestions.length}
+                >
+                  Finish Quiz
+                </button>
+              </>
+            ) : (
+              <>
+                <h2>Quiz complete!</h2>
+
+                <p>
+                  Your score:{" "}
+                  {quizQuestions.filter(
+                    (question, index) =>
+                      quizAnswers[index] === question.answer
+                  ).length}{" "}
+                  out of {quizQuestions.length}
+                </p>
+
+                {quizQuestions.map((question, index) => (
+                  <div key={`${question.category}-${question.id}`}>
+                    <p>
+                      <strong>Question {index + 1}:</strong>{" "}
+                      {question.question}
+                    </p>
+                    <p>
+                      Your answer: {quizAnswers[index]}
+                    </p>
+                    <p>
+                      Correct answer: {question.answer}
+                    </p>
+                    {question.answerQuote && (
+                      <p>{question.answerQuote}</p>
+                    )}
+                  </div>
+                ))}
+
+                <button
+                  type="button"
+                  onClick={startQuiz}
+                >
+                  Play Again
+                </button>
+              </>
+            )}
+          </div>
+
+          <div className="about-window-statusbar">
+            {quizFinished ? "Quiz complete" : "Ready"}
+          </div>
+        </div>
+      )}
       {selectedSubSection && (
         <div className="about-window">
 
